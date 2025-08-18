@@ -13,9 +13,6 @@ const Footer = () => {
             <h3 className="text-2xl font-bold font-heading">
               Miguel<span className="text-portfolio-purple">Conde</span>
             </h3>
-            <p className="text-gray-300 max-w-xs">
-              Software Developer building modern web applications and user experiences.
-            </p>
             <div className="flex space-x-4">
               <a 
                 href="https://github.com/miguelcondesantos" 

@@ -12,7 +12,7 @@ const About = () => {
             <div className="sticky top-28">
               <h2 className="section-title pb-3 mb-6">About Me</h2>
               <p className="text-muted-foreground mb-6">
-                I'm a proactive Full-Stack developer looking for an internship opportunity to
+                I'm a proactive Software developer looking for an internship opportunity to
                 expand my experience as a developer and add value to the company.
               </p>
               <p className="text-muted-foreground mb-6">
@@ -81,7 +81,7 @@ const About = () => {
                 <div className="space-y-8">
                   <div className="bg-white dark:bg-secondary p-6 rounded-lg shadow-md">
                     <div className="flex justify-between items-start mb-2">
-                      <h3 className="text-xl font-semibold">Associate Degree in Multi-platform Software Development</h3>
+                      <h3 className="text-xl font-semibold">Bachelor’s Degree in Multi-platform Software Development</h3>
                       <span className="bg-portfolio-light-purple text-portfolio-purple text-sm px-3 py-1 rounded-full">
                         2023 - 2025
                       </span>
@@ -91,7 +91,7 @@ const About = () => {
                   
                   <div className="bg-white dark:bg-secondary p-6 rounded-lg shadow-md">
                     <div className="flex justify-between items-start mb-2">
-                      <h3 className="text-xl font-semibold">Technical Degree in Systems Development</h3>
+                      <h3 className="text-xl font-semibold">Technical High School Degree in Systems Development</h3>
                       <span className="bg-portfolio-light-purple text-portfolio-purple text-sm px-3 py-1 rounded-full">
                         2020 - 2022
                       </span>

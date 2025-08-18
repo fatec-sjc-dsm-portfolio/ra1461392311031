@@ -11,46 +11,46 @@ const projects = [
   {
     id: 1,
     title: "Consulta-Vid",
-    description: "A web app focused on Long Covid ...",
+    description: "System to optimize business management with an intuitive interface and robust features that simplify asset administration.",
     image: `${BASE}images/consultavid.png`,
     repoUrl: "https://github.com/APIEquipe/EquipeTechEmpireAPI",
     tags: ["HTML", "CSS", "Python", "JavaScript", "Flask"]
   },
-  {
-    id: 2,
-    title: "Asset Management System",
-    description: "System to optimize business management ...",
-    image: `${BASE}images/ativos.avif`,
-    repoUrl: "https://github.com/BananaaScript/SGA",
-    tags: ["Java", "TypeScript", "React", "Spring", "MySQL"]
-  },
-  {
-    id: 3,
-    title: "Meteorological Data Collector",
-    description: "Environmental monitoring system ...",
-    image: `${BASE}images/meteorologico.png`,
-    repoUrl: "https://github.com/BananaScripts/Meteorological-Data-Collector",
-    tags: ["TypeScript", "React", "Node.js", "MySQL", "Docker", "Google Cloud", "Supabase"]
-  },
-  {
-    id: 4,
-    title: "AI Agents Platform",
-    description: "A platform for creating and managing personalized AI agents ...",
-    image: `${BASE}images/agentia.png`,
-    repoUrl: "https://github.com/BananaScripts/API_5-Semester",
-    tags: ["TypeScript", "React", "Node.js", "MongoDB", "Docker", "AI", "Mobile"]
-  },
-  {
-    id: 5,
-    title: "Opin8",
-    description: "A collaborative space site for participatory democracy ...",
-    image: `${BASE}images/opin8.png`,
-    siteURL: "https://opin8.com/",
-    tags: ["TypeScript", "React", "Node.js", "PostgreSQL", "AI"]
-  },
+  //   {
+  //     id: 2,
+  //     title: "Asset Management System",
+  //     description: "System to optimize business management with an intuitive interface and robust features that simplify asset administration.",
+  //     image: `${BASE}images/ativos.avif`,
+  //     repoUrl: "https://github.com/BananaaScript/SGA",
+  //     tags: ["Java", "TypeScript", "React", "Spring", "MySQL"]
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Meteorological Data Collector",
+  //     description: "Environmental monitoring system with low-cost IoT weather stations that collect climate data and display it in dashboards.",
+  //     image: `${BASE}images/meteorologico.png`,
+  //     repoUrl: "https://github.com/BananaScripts/Meteorological-Data-Collector",
+  //     tags: ["TypeScript", "React", "Node.js", "MySQL", "Docker", "Google Cloud", "Supabase"]
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "AI Agents Platform",
+  //     description: "A platform for creating and managing personalized Artificial Intelligence agents, trained to answer questions about the company's products, systems, and internal processes. The tool features permission control and a mobile app with an intelligent chat, where users interact only with the agents they have access to, with data stored in the cloud.",
+  //     image: `${BASE}images/agentia.png`,
+  //     repoUrl: "https://github.com/BananaScripts/API_5-Semester",
+  //     tags: ["TypeScript", "React", "Node.js", "MongoDB", "Docker", "AI", "Mobile"]
+  //   },
+  //   {
+  //     id: 5,
+  //     title: "Opin8",
+  //     description: "A collaborative space site for participatory democracy, where anyone can create petitions, proposals and bills to help improve society. Free from ads and algorithmic manipulation, it allows you to share ideas, raise support and create real impact - with AI's help to shape your proposals professionally",
+  //     image: `${BASE}images/opin8.png`,
+  //     siteURL: "https://opin8.com/",
+  //     tags: ["TypeScript", "React", "Node.js", "PostgreSQL", "AI"]
+  //   },
 ];
 
-const placeholder = `${BASE}images/placeholder.svg`; // coloque placeholder.svg em public/images
+const placeholder = `${BASE}images/placeholder.svg`;
 
 const categories = ["All", "React", "TypeScript", "Python", "Java", "Spring", "Node.js", "MySQL", "MongoDB", "AI"];
 
