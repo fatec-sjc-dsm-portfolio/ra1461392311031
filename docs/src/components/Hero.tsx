@@ -16,7 +16,7 @@ const Hero = () => {
               Hello, I'm <span className="text-portfolio-purple">Miguel Conde Santos</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-              Software Developer with experience in Java, JavaScript, TypeScript, C#, Python, HTML, CSS,
+              Software Developer with experience in JavaScript, TypeScript, C#, Python, HTML, CSS,
               Spring, React, Node.js, SQL and NoSQL databases, Docker, Google Cloud, Git and GitHub.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
