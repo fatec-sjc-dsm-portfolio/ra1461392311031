@@ -36,3 +36,5 @@ jobs:
         with:
           github_token: ${{ secrets.GH_PAT }}
           publish_dir: ./docs/dist
+          user_name: "miguelcondesantos"
+          user_email: "miguelcondesantos@users.noreply.github.com"
