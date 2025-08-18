@@ -1,4 +1,4 @@
-### Rodar o projeto:
+### Run project:
 ```bash
 cd docs
 npm install

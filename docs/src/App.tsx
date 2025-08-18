@@ -11,9 +11,7 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => {
-  // Initialize theme from localStorage or system preference and set up listener
   useEffect(() => {
-    // Apply initial theme
     const applyTheme = () => {
       const storedTheme = localStorage.getItem("theme");
 
@@ -27,7 +25,6 @@ const App = () => {
 
     applyTheme();
 
-    // Listen for storage events (in case theme is changed in another tab)
     const handleStorageChange = (e: StorageEvent) => {
       if (e.key === "theme") {
         applyTheme();
@@ -36,7 +33,6 @@ const App = () => {
 
     window.addEventListener("storage", handleStorageChange);
 
-    // Cleanup listener
     return () => {
       window.removeEventListener("storage", handleStorageChange);
     };

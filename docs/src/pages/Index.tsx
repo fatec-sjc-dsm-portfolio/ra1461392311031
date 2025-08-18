@@ -9,7 +9,6 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   useEffect(() => {
-    // Apply animations when components are in view
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -33,26 +32,21 @@ const Index = () => {
     };
   }, []);
 
-  // Novo: rolar automaticamente para a seção correta quando a página carrega
   useEffect(() => {
     const scrollToHash = () => {
-      const hash = window.location.hash; // ex: "#/projects" ou "#projects"
+      const hash = window.location.hash;
       if (!hash) return;
 
-      // normalize para seletor "#projects"
       const selector = hash.startsWith('#/') ? `#${hash.slice(2)}` : hash.startsWith('#') ? hash : `#${hash}`;
 
       const el = document.querySelector(selector);
       if (el) {
-        // pequeno timeout pra garantir que tudo esteja renderizado
         setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 50);
       }
     };
 
-    // roda no mount
     scrollToHash();
 
-    // escuta mudanças de hash (ex.: usuário colou outro link)
     window.addEventListener('hashchange', scrollToHash);
     return () => window.removeEventListener('hashchange', scrollToHash);
   }, []);
