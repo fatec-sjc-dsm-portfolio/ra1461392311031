@@ -11,10 +11,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: ./docs
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -24,11 +20,13 @@ jobs:
         with:
           node-version: 20.8.1
 
-      - name: Instalar Dependencias
+      - name: Instalar Dependências
         run: npm install
+        working-directory: ./docs
 
       - name: Buildar projeto
         run: npm run build
+        working-directory: ./docs
 
       - name: Verificar dist
         run: ls -la ./docs/dist
