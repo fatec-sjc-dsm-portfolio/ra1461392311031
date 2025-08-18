@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.8.1
+
+      - name: Instalar Dependências
+        run: npm install
+        working-directory: ./docs
+
+      - name: Buildar projeto
+        run: npm run build
+        working-directory: ./docs
+
+      - name: Verificar dist
+        run: ls -la ./docs/dist
+
+      - name: Deploy no GHP
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GH_PAT }}
+          publish_dir: ./docs/dist
+          user_name: "miguelcondesantos"
+          user_email: "miguelcondesantos@users.noreply.github.com"
