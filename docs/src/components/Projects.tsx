@@ -4,51 +4,54 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Github, Link2 } from 'lucide-react';
 
-// Project data
+const BASE = import.meta.env.BASE_URL ?? '/';
+
+// Project data (use template literals para incluir BASE)
 const projects = [
   {
     id: 1,
     title: "Consulta-Vid",
-    description:"A web app focused on Long Covid in Vale do Paraíba’s major cities, offering accurate, localized data on cases, symptoms, and treatments. Built for health professionals, researchers, and the public, it delivers insights to understand and address the condition's regional impact.",
-    image:"images/consultavid.png",
+    description: "A web app focused on Long Covid ...",
+    image: `${BASE}images/consultavid.png`,
     repoUrl: "https://github.com/APIEquipe/EquipeTechEmpireAPI",
     tags: ["HTML", "CSS", "Python", "JavaScript", "Flask"]
   },
   {
     id: 2,
     title: "Asset Management System",
-    description: "System to optimize business management with an intuitive interface and robust features that simplify asset administration.",
-    image: "/images/ativos.avif",
+    description: "System to optimize business management ...",
+    image: `${BASE}images/ativos.avif`,
     repoUrl: "https://github.com/BananaaScript/SGA",
     tags: ["Java", "TypeScript", "React", "Spring", "MySQL"]
   },
   {
     id: 3,
     title: "Meteorological Data Collector",
-    description: "Environmental monitoring system with low-cost IoT weather stations that collect climate data and display it in dashboards.",
-    image: "/images/meteorologico.png",
+    description: "Environmental monitoring system ...",
+    image: `${BASE}images/meteorologico.png`,
     repoUrl: "https://github.com/BananaScripts/Meteorological-Data-Collector",
     tags: ["TypeScript", "React", "Node.js", "MySQL", "Docker", "Google Cloud", "Supabase"]
   },
   {
     id: 4,
     title: "AI Agents Platform",
-    description: "A platform for creating and managing personalized Artificial Intelligence agents, trained to answer questions about the company's products, systems, and internal processes. The tool features permission control and a mobile app with an intelligent chat, where users interact only with the agents they have access to, with data stored in the cloud.",
-    image: "/images/agentia.png",
+    description: "A platform for creating and managing personalized AI agents ...",
+    image: `${BASE}images/agentia.png`,
     repoUrl: "https://github.com/BananaScripts/API_5-Semester",
     tags: ["TypeScript", "React", "Node.js", "MongoDB", "Docker", "AI", "Mobile"]
   },
   {
     id: 5,
     title: "Opin8",
-    description: "A collaborative space site for participatory democracy, where anyone can create petitions, proposals and bills to help improve society. Free from ads and algorithmic manipulation, it allows you to share ideas, raise support and create real impact - with AI's help to shape your proposals professionally.",
-    image: "images/opin8.png",
+    description: "A collaborative space site for participatory democracy ...",
+    image: `${BASE}images/opin8.png`,
     siteURL: "https://opin8.com/",
     tags: ["TypeScript", "React", "Node.js", "PostgreSQL", "AI"]
   },
 ];
 
-// Categories for filter
+const placeholder = `${BASE}images/placeholder.svg`; // coloque placeholder.svg em public/images
+
 const categories = ["All", "React", "TypeScript", "Python", "Java", "Spring", "Node.js", "MySQL", "MongoDB", "AI"];
 
 const Projects = () => {
@@ -65,11 +68,9 @@ const Projects = () => {
           My Projects
         </h2>
         <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
-          Here are some of my recent projects. Each is built with care and attention to detail,
-          focusing on performance, user experience, and clean code.
+          Here are some of my recent projects...
         </p>
 
-        {/* Filter Categories */}
         <div className="flex flex-wrap justify-center gap-2 mb-12">
           {categories.map((category) => (
             <Button
@@ -84,7 +85,6 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {filteredProjects.map((project, index) => (
             <Card
@@ -96,9 +96,14 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
+                  onError={(e) => {
+                    const t = e.currentTarget;
+                    if (t.src !== placeholder) t.src = placeholder;
+                  }}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
               </div>
+
               <CardHeader className="pb-2">
                 <h3 className="text-xl font-bold">{project.title}</h3>
               </CardHeader>

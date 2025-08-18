@@ -16,26 +16,26 @@ const App = () => {
     // Apply initial theme
     const applyTheme = () => {
       const storedTheme = localStorage.getItem("theme");
-      
-      if (storedTheme === "dark" || 
-          (!storedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+
+      if (storedTheme === "dark" ||
+        (!storedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
         document.documentElement.classList.add("dark");
       } else {
         document.documentElement.classList.remove("dark");
       }
     };
-    
+
     applyTheme();
-    
+
     // Listen for storage events (in case theme is changed in another tab)
     const handleStorageChange = (e: StorageEvent) => {
       if (e.key === "theme") {
         applyTheme();
       }
     };
-    
+
     window.addEventListener("storage", handleStorageChange);
-    
+
     // Cleanup listener
     return () => {
       window.removeEventListener("storage", handleStorageChange);
@@ -50,7 +50,11 @@ const App = () => {
         <HashRouter>
           <Routes>
             <Route path="/" element={<Index />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="/home" element={<Index />} />
+            <Route path="/projects" element={<Index />} />
+            <Route path="/skills" element={<Index />} />
+            <Route path="/about" element={<Index />} />
+            <Route path="/contact" element={<Index />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </HashRouter>

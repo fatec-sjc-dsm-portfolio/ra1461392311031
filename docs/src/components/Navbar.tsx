@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -18,40 +17,51 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '#/home' },
+    { name: 'Projects', href: '#/projects' },
+    { name: 'Skills', href: '#/skills' },
+    { name: 'About', href: '#/about' },
+    { name: 'Contact', href: '#/contact' },
   ];
 
   const handleResumeClick = () => {
     const link = document.createElement('a');
     link.href = 'https://drive.google.com/uc?export=download&id=1KH4ovLxlmMlmr3lD6MEu452VVH6uscum';
+    link.download = 'Miguel-Conde-Santos-Resume.pdf';
+    document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    // atualiza a hash na URL para que o HashRouter/roteamento reflita a seção
+    window.location.hash = href; // ex: "#/projects"
+
+    // converte "#/projects" -> "#projects" para usar como seletor
+    const selector = href.startsWith('#/') ? `#${href.slice(2)}` : href;
+    const element = document.querySelector(selector);
+    if (element) {
+      // pequeno timeout para garantir que a seção esteja montada/renderizada
+      setTimeout(() => element.scrollIntoView({ behavior: 'smooth' }), 50);
+    }
+  };
+
   return (
-    <header 
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/80 dark:bg-secondary/80 backdrop-blur-sm shadow-md' : 'bg-transparent'
-      }`}
+    <header
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 dark:bg-secondary/80 backdrop-blur-sm shadow-md' : 'bg-transparent'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
-            <Link 
-              to="/" 
+            {/* Mantive Link para "/" (vai para #/ ), mas poderia ser <a href="#/home"> */}
+            <Link
+              to="/"
               className="text-2xl font-bold font-heading hover:opacity-90 transition-opacity duration-300"
             >
               <span className="text-[#9b87f5]">M</span>
@@ -72,16 +82,11 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-4">
             {navLinks.map((link) => (
-              <a 
-                key={link.name} 
-                href={link.href} 
-                className="nav-link"
-                onClick={() => {
-                  const element = document.querySelector(link.href);
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
+              <a
+                key={link.name}
+                href={link.href}
+                className="nav-link cursor-pointer"
+                onClick={(e) => handleNavClick(e, link.href)}
               >
                 {link.name}
               </a>
@@ -92,20 +97,16 @@ const Navbar = () => {
                 Resume
               </Button>
             </div>
-          </nav> 
+          </nav>
 
           {/* Mobile Navigation Toggle and Theme Switcher */}
           <div className="md:hidden flex items-center gap-3">
             <ThemeSwitcher />
-            <button 
+            <button
               onClick={toggleMenu}
               className="text-gray-600 dark:text-gray-300 hover:text-portfolio-purple focus:outline-none"
             >
-              {isOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
@@ -119,13 +120,10 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="block px-3 py-2 text-base font-medium hover:text-portfolio-purple hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
-                onClick={() => {
+                className="block px-3 py-2 text-base font-medium hover:text-portfolio-purple hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md cursor-pointer"
+                onClick={(e) => {
                   closeMenu();
-                  const element = document.querySelector(link.href);
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
+                  handleNavClick(e, link.href);
                 }}
               >
                 {link.name}

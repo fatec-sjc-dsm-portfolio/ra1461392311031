@@ -14,7 +14,7 @@ const Footer = () => {
               Miguel<span className="text-portfolio-purple">Conde</span>
             </h3>
             <p className="text-gray-300 max-w-xs">
-              Full-Stack Developer building modern web applications and user experiences.
+              Software Developer building modern web applications and user experiences.
             </p>
             <div className="flex space-x-4">
               <a 

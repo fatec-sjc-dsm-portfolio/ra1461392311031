@@ -10,14 +10,14 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
           <div className="lg:col-span-3 space-y-6 opacity-0 animate-fade-in">
             <div className="inline-block bg-portfolio-light-purple dark:bg-portfolio-dark-purple/20 text-portfolio-purple px-4 py-1 rounded-full font-medium text-sm">
-              Full-Stack Developer
+              Software Developer
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               Hello, I'm <span className="text-portfolio-purple">Miguel Conde Santos</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-              Full-Stack Developer with experience in Java, JavaScript, TypeScript, C#, Python, HTML, CSS,
-              Spring, React, Flask, Node.js, SQL and NoSQL databases, Docker, Google Cloud, Git and GitHub.
+              Software Developer with experience in Java, JavaScript, TypeScript, C#, Python, HTML, CSS,
+              Spring, React, Node.js, SQL and NoSQL databases, Docker, Google Cloud, Git and GitHub.
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Button size="lg" className="rounded-md" asChild>
@@ -28,25 +28,25 @@ const Hero = () => {
               </Button>
             </div>
             <div className="pt-6 flex items-center space-x-4">
-              <a 
-                href="https://github.com/miguelcondesantos" 
-                target="_blank" 
+              <a
+                href="https://github.com/miguelcondesantos"
+                target="_blank"
                 className="text-gray-600 dark:text-gray-300 hover:text-portfolio-purple transition-colors duration-200"
                 aria-label="GitHub"
               >
                 <Github size={24} />
               </a>
-              <a 
-                href="https://www.linkedin.com/in/miguel-conde-santos-a67313271/" 
-                target="_blank" 
+              <a
+                href="https://www.linkedin.com/in/miguel-conde-santos-a67313271/"
+                target="_blank"
                 className="text-gray-600 dark:text-gray-300 hover:text-portfolio-purple transition-colors duration-200"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={24} />
               </a>
-              <a 
-                href="mailto:miguelconde121004@gmail.com" 
-                target="_blank" 
+              <a
+                href="mailto:miguelconde121004@gmail.com"
+                target="_blank"
                 className="text-gray-600 dark:text-gray-300 hover:text-portfolio-purple transition-colors duration-200"
                 aria-label="Email"
               >
@@ -57,9 +57,9 @@ const Hero = () => {
           <div className="lg:col-span-2 flex justify-center lg:justify-end opacity-0 animate-fade-in animate-delay-300">
             <div className="relative">
               <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-portfolio-purple shadow-xl">
-                <img 
-                  src="/images/eu.png" 
-                  alt="Profile" 
+                <img
+                  src={`${import.meta.env.BASE_URL}images/eu.png`}
+                  alt="Profile"
                   className="w-full h-full object-cover"
                 />
               </div>
