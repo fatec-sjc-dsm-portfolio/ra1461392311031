@@ -5,17 +5,17 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
   build:
+    runs-on: ubuntu-latest
+
     defaults:
       run:
         working-directory: ./docs
 
-   steps:
+    steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: 20.8.1
 
-      - name: Instalar Dependências
+      - name: Instalar Dependencias
         run: npm install
 
       - name: Buildar projeto
