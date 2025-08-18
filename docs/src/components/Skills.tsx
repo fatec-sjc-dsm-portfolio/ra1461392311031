@@ -61,7 +61,7 @@ const Skills = () => {
         <div className="max-w-4xl mx-auto">
           <h2 className="section-title pb-3 mb-8 text-center after:left-1/2 after:-translate-x-1/2">Tech Stack</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-10 text-center">
-            These are the technologies I work with daily to build robust 
+            These are the technologies I work with to build robust 
             and scalable applications with great user experiences.
           </p>
           
