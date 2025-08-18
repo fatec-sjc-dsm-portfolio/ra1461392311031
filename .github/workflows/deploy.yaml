@@ -30,6 +30,9 @@ jobs:
       - name: Buildar projeto
         run: npm run build
 
+      - name: Verificar dist
+        run: ls -la ./docs/dist
+
       - name: Deploy no GHP
         uses: peaceiris/actions-gh-pages@v4
         with:
