@@ -101,7 +101,7 @@ const Navbar = () => {
 
           {/* Mobile Navigation Toggle and Theme Switcher */}
           <div className="md:hidden flex items-center gap-3">
-            <ThemeSwitcher />
+            {/*<ThemeSwitcher />*/}
             <button
               onClick={toggleMenu}
               className="text-gray-600 dark:text-gray-300 hover:text-portfolio-purple focus:outline-none"
