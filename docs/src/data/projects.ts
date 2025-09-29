@@ -1,4 +1,3 @@
-
 const BASE = import.meta.env.BASE_URL ?? '/';
 
 export const projects = [
@@ -37,8 +36,7 @@ export const projects = [
     tags: ["TypeScript", "React", "Node.js", "MySQL", "Docker", "Google Cloud", "Supabase"],
     contributions: [
       "Designed the relational database schema in MySQL.",
-      "Built the entire backend, including REST APIs for management, data processing, and an alert system.",
-      "Developed the endpoint and logic for receiving and validating data from IoT stations."
+      ""
     ]
   },
   {
@@ -51,7 +49,7 @@ export const projects = [
     contributions: [
       "Developed the core backend in C#, including authentication and permission systems.",
       "Implemented CRUD APIs for user and agent management and integrated Redis for real-time messaging.",
-      "Implemented AI agents using LLMs like Google Gemini and built the backend for usage dashboards and a file upload system to train them."
+      "Implemented AI agents using Google Gemini and a file upload system to train them."
     ]
   },
   {
@@ -62,9 +60,9 @@ export const projects = [
     siteURL: "https://opin8.com/",
     tags: ["TypeScript", "React", "Node.js", "PostgreSQL", "AI"],
     contributions: [
-      "Developed the backend authentication system with OAuth, JWT, and Gov.br integration.",
+      "Developed the backend authentication system with OAuth, JWT, and Google integration.",
       "Built the core functionalities, including management of proposals, comments, and interactions.",
-      "Designed and implemented the database schema using PostgreSQL and Redis, and created REST APIs for client dashboards and data reporting."
+      "Designed and implemented the database schema using PostgreSQL"
     ]
   },
 ];
