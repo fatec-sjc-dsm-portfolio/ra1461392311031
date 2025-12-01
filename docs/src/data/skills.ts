@@ -9,6 +9,7 @@ import {
   SiSpring,
   SiFlask,
   SiMysql,
+  SiPostgresql,
   SiMongodb,
   SiRedis,
   SiDocker,
@@ -56,6 +57,7 @@ export const techCategories: TechCategory[] = [
     name: "Database & DevOps",
     tech: [
       { name: "MySQL", color: "#4479A1", icon: SiMysql },
+      { name: "PostgreSQL", color: "#10619fff", icon: SiPostgresql },
       { name: "MongoDB", color: "#47A248", icon: SiMongodb },
       { name: "Redis", color: "#DC382D", icon: SiRedis },
       { name: "Docker", color: "#2496ED", icon: SiDocker },

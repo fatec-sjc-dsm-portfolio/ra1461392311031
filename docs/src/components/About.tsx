@@ -28,13 +28,14 @@ const About = () => {
           </div>
           
           <div className="lg:col-span-3 opacity-0 animate-fade-in animate-delay-200">
-            <Tabs defaultValue="experience" className="w-full">
-              <TabsList className="grid w-full grid-cols-3">
-                <TabsTrigger value="experience">Experience</TabsTrigger>
+            <Tabs defaultValue="education" className="w-full">
+              <TabsList className="grid w-full grid-cols-2">
+                {/*<TabsTrigger value="experience">Experience</TabsTrigger>*/}
                 <TabsTrigger value="education">Education</TabsTrigger>
                 <TabsTrigger value="languages">Languages</TabsTrigger>
               </TabsList>
               
+              {/*
               <TabsContent value="experience" className="mt-6">
                 <div className="space-y-8">
                   <div className="bg-white dark:bg-secondary p-6 rounded-lg shadow-md">
@@ -76,6 +77,7 @@ const About = () => {
                   </div>
                 </div>
               </TabsContent>
+              */}
               
               <TabsContent value="education" className="mt-6">
                 <div className="space-y-8">

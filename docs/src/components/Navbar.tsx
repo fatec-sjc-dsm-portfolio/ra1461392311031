@@ -30,7 +30,7 @@ const Navbar = () => {
 
   const handleResumeClick = () => {
     const link = document.createElement('a');
-    link.href = 'https://drive.google.com/uc?export=download&id=1KH4ovLxlmMlmr3lD6MEu452VVH6uscum';
+    link.href = 'https://drive.google.com/uc?export=download&id=1bIBGhZOOxelg1V4pi61HgwiZrnpxPqA9';
     link.download = 'Miguel-Conde-Santos-Resume.pdf';
     document.body.appendChild(link);
     link.click();
